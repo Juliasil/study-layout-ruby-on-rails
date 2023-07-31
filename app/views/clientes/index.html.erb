@@ -1,0 +1,19 @@
+<!-- Panel (Spotlight) -->
+<section class="panel spotlight medium right" id="first">
+  <div class="content span-7">
+    <p style="color: green"><%= notice %></p>
+
+    <h1>Clientes</h1>
+
+    <div id="clientes">
+      <% @clientes.each do |cliente| %>
+        <%= render cliente %>
+        <p>
+          <%= link_to "Show this cliente", cliente %>
+        </p>
+      <% end %>
+    </div>
+
+    <%= link_to "New cliente", new_cliente_path %>
+  </div>
+</section>
