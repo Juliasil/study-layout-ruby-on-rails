@@ -1,19 +1,38 @@
 <!-- Panel (Spotlight) -->
-<section class="panel spotlight medium right" id="first">
+<section class="panel spotlight medium right" style="background: #907190;">
   <div class="content span-7">
     <p style="color: green"><%= notice %></p>
 
     <h1>Clientes</h1>
 
-    <div id="clientes">
+    <table>
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Telefone</th>
+        <th>Endereço</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
       <% @clientes.each do |cliente| %>
-        <%= render cliente %>
-        <p>
-          <%= link_to "Show this cliente", cliente %>
-        </p>
+      <tr>
+        <td><%= cliente.id %></td>
+        <td><%= cliente.nome %></td>
+        <td><%= cliente.telefone %></td>
+        <td><%= cliente.endereco %></td>
+        <td>
+          <p>
+            <%= link_to "Mostrar", cliente %>
+          </p>
+        </td>
+      </tr>
+      <tr>
       <% end %>
-    </div>
+      </tbody>
+    </table>
 
-    <%= link_to "New cliente", new_cliente_path %>
+    <%= link_to "Novo Cliente", new_cliente_path %>
   </div>
 </section>
